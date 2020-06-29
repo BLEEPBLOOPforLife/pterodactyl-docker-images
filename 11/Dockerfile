@@ -2,7 +2,7 @@ FROM		adoptopenjdk:11-jre-openj9
 
 LABEL		author="TheAsian EggrollMaker" maintainer="theasianeggrollmaker@gmail.com"
 
-RUN			apt-get update -y && apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 && useradd -d /home/container -m container
+RUN			apt-get update -y && DEBIAN_FRONTEND="noninteractive" apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 && useradd -d /home/container -m container
 
 USER		container
 
